@@ -2,7 +2,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-address_book = ['jwoods@micro100.com', 'dharris@micro100.com','sbooth@micro100.comm']
+address_book = ['xxxx@xxx.com', 'xxxx@xxx.com','xxxx@xxx.com']
 msg = MIMEMultipart()    
 sender = 'Alert@micro100.com'
 subject = "Pi 80 Alarm"
