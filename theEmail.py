@@ -1,21 +1,20 @@
 import smtplib
-#import email modules
 from email.mime.text import MIMEText
-# Emails to use
-addr_to   = 'jwoods@micro100.com'
-addr_from = 'jdwoodsy1@gmail.com' 
+from email.mime.multipart import MIMEMultipart
 
-#SMTP info
-smtp_server = 'smtp.gmail.com:587'
-smtp_user   ='jdwoodsy1@gmail.com'
-smtp_pass   ='cooper2010'
+address_book = ['jwoods@micro100.com', 'dharris@micro100.com','sbooth@micro100.comm']
+msg = MIMEMultipart()    
+sender = 'Alert@micro100.com'
+subject = "Pi 80 Alarm"
+body = "Pi 80 Alarm issue!!!"
 
-msg = MIMEText('This is a test')
-msg['To'] = addr_to
-msg['From'] = addr_from
-msg['Subject'] = 'Test Email from RPI'
-
-s= smtplib.SMTP(smtp_server)
-s.login(smtp_user, smtp_pass)
-s.sendmail(addr_from, addr_to, msg.as_string())
-s.quit()
+msg['From'] = sender
+msg['To'] = ','.join(address_book)
+msg['Subject'] = subject
+msg.attach(MIMEText(body, 'plain'))
+text=msg.as_string()
+#print text
+# Send the message via our SMTP server
+s = smtplib.SMTP('10.103.1.17:25')
+s.sendmail(sender,address_book, text)
+s.quit() 

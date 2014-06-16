@@ -12,7 +12,7 @@ while True:
 	if ((not prev_input) and input):
 		print("Button pressed")
 		GPIO.leds[4].turn_on()
-		os.system('/home/pi/home/theEmail.sh')
+		os.system('sudo python3 /home/pi/home/theEmail.py')
 	prev_input = input
 	GPIO.leds[4].turn_off()
 	
