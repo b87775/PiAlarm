@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 
 address_book = ['xxxx@xxx.com', 'xxxx@xxx.com','xxxx@xxx.com']
 msg = MIMEMultipart()    
-sender = 'Alert@micro100.com'
+sender = 'xxxx@xxx.com'
 subject = "Pi 80 Alarm"
 body = "Pi 80 Alarm issue!!!"
 
@@ -15,6 +15,6 @@ msg.attach(MIMEText(body, 'plain'))
 text=msg.as_string()
 #print text
 # Send the message via our SMTP server
-s = smtplib.SMTP('10.103.1.17:25')
+s = smtplib.SMTP('xxxxxxxxxx')
 s.sendmail(sender,address_book, text)
 s.quit() 
