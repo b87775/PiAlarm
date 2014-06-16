@@ -7,10 +7,11 @@ home/start.py
 	This is the start program that runs at boot in the background
 home/theAlarm.py 
 	This is ran inside of the start.py program at boot.
-	this will call a BASH script called theEmail.sh in this directory.
+	This will call theEmail.py script to send email to configured addresses.
+	If you edit this you will have to reboot.
 home/theEmail.py
 	This is where you would changed the email and who it goes to. 
-	add email to end of the script or add multiple with "," seperating them.
+	you can edit this without restarting.
 
 all email configure information can be setup in the file (/etc/ssmtp/ssmtp.conf)
 	replace AuthUser and AuthPass and mailhub to setup the desired email service. 
